@@ -1,0 +1,1 @@
+{"version":"0.0.1","configurations":[{"name":"desir-barber-shop-dev","runtimeExecutable":"npm","runtimeArgs":["run","dev","--","-p","3006"],"port":3006}]}
