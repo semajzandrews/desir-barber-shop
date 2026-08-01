@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 export default function CallPill() {
   return (
     <motion.a
-      href="tel:+19736402740"
+      href="#book"
+      onClick={(e) => { e.preventDefault(); document.querySelector("#book")?.scrollIntoView({ behavior: "smooth" }); }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 2.2, duration: 0.5 }}
@@ -37,10 +38,11 @@ export default function CallPill() {
         (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
       }}
     >
-      <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-        <path d="M3.654 1.328a.678.678 0 00-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 004.168 6.608 17.569 17.569 0 006.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 00-.063-1.015l-2.307-1.794a.678.678 0 00-.58-.122l-2.19.547a1.745 1.745 0 01-1.657-.459L5.482 8.062a1.745 1.745 0 01-.46-1.657l.548-2.19a.678.678 0 00-.122-.58L3.654 1.328z" fill="white"/>
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M1.5 4.25A.75.75 0 012.25 3.5h11.5a.75.75 0 01.75.75v1.75a1.75 1.75 0 000 3.5v1.75a.75.75 0 01-.75.75H2.25a.75.75 0 01-.75-.75V9.5a1.75 1.75 0 000-3.5V4.25z" stroke="white" strokeWidth="1.2"/>
+        <path d="M6.75 5.25v5.5" stroke="white" strokeWidth="1.2" strokeDasharray="1.4 1.4"/>
       </svg>
-      Call to Book
+      Write a Ticket
     </motion.a>
   );
 }

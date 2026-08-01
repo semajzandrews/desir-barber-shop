@@ -7,6 +7,7 @@ const Navigation   = dynamic(() => import("./Navigation"),   { ssr: false });
 const Hero         = dynamic(() => import("./Hero"),          { ssr: false });
 const Marquee      = dynamic(() => import("./Marquee"),       { ssr: false });
 const Services     = dynamic(() => import("./Services"),      { ssr: false });
+const Ticket       = dynamic(() => import("./Ticket"),        { ssr: false });
 const Gallery      = dynamic(() => import("./Gallery"),       { ssr: false });
 const About        = dynamic(() => import("./About"),         { ssr: false });
 const Pillars      = dynamic(() => import("./Pillars"),       { ssr: false });
@@ -25,6 +26,7 @@ export default function ClientLayout() {
         <Hero />
         <Marquee />
         <Services />
+        <Ticket />
         <Gallery />
         <About />
         <Pillars />

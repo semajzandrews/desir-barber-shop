@@ -87,6 +87,7 @@ export default function Footer() {
               Navigate
             </p>
             {[
+              { label: "Book a Cut", href: "#book" },
               { label: "Services", href: "#services" },
               { label: "About", href: "#about" },
               { label: "Visit", href: "#visit" },

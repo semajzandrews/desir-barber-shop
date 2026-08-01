@@ -46,11 +46,12 @@ export default function CallBanner() {
             lineHeight: 1.12,
             marginBottom: "1.75rem",
           }}>
-            Call us. We are ready<br />
+            Write your ticket. We are ready<br />
             <em>when you are.</em>
           </h2>
           <a
-            href="tel:+19736402740"
+            href="#book"
+            onClick={(e) => { e.preventDefault(); document.querySelector("#book")?.scrollIntoView({ behavior: "smooth" }); }}
             style={{
               fontFamily: "var(--font-body)",
               fontSize: "1.1rem",
@@ -67,8 +68,23 @@ export default function CallBanner() {
             onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.88")}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
           >
-            (973) 640-2740
+            Book a Cut
           </a>
+          <p style={{ marginTop: "1.1rem" }}>
+            <a
+              href="tel:+19736402740"
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "0.85rem",
+                color: "rgba(255,255,255,0.8)",
+                textDecoration: "none",
+                borderBottom: "1px solid rgba(255,255,255,0.4)",
+                paddingBottom: "2px",
+              }}
+            >
+              or call (973) 640-2740
+            </a>
+          </p>
         </motion.div>
       </div>
     </section>

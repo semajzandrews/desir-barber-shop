@@ -68,7 +68,8 @@ export default function Gallery() {
               </h2>
             </div>
             <a
-              href="tel:+19736402740"
+              href="#book"
+              onClick={(e) => { e.preventDefault(); document.querySelector("#book")?.scrollIntoView({ behavior: "smooth" }); }}
               style={{
                 fontFamily: "var(--font-body)",
                 fontSize: "0.8rem",

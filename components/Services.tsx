@@ -234,10 +234,11 @@ export default function Services() {
           style={{ marginTop: "2.5rem", textAlign: "center" }}
         >
           <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", color: "var(--muted)", marginBottom: "1rem" }}>
-            Walk-ins welcome. Call ahead to secure your spot.
+            Walk-ins welcome. Put a ticket in to skip the wait.
           </p>
           <a
-            href="tel:+19736402740"
+            href="#book"
+            onClick={(e) => { e.preventDefault(); document.querySelector("#book")?.scrollIntoView({ behavior: "smooth" }); }}
             style={{
               fontFamily: "var(--font-body)",
               fontSize: "0.85rem",
@@ -253,7 +254,7 @@ export default function Services() {
             onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
           >
-            (973) 640-2740 &nbsp;&rarr;
+            Write your ticket &nbsp;&rarr;
           </a>
         </motion.div>
       </div>

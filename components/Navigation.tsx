@@ -82,7 +82,8 @@ export default function Navigation() {
               </a>
             ))}
             <a
-              href="tel:+19736402740"
+              href="#book"
+              onClick={(e) => scrollTo(e, "#book")}
               style={{
                 fontFamily: "var(--font-body)",
                 fontSize: "0.82rem",
@@ -170,7 +171,8 @@ export default function Navigation() {
               </motion.a>
             ))}
             <motion.a
-              href="tel:+19736402740"
+              href="#book"
+              onClick={(e) => scrollTo(e, "#book")}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.32 }}
@@ -187,7 +189,22 @@ export default function Navigation() {
                 textDecoration: "none",
               }}
             >
-              (973) 640-2740
+              Book a Cut
+            </motion.a>
+            <motion.a
+              href="tel:+19736402740"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.38 }}
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "0.85rem",
+                color: "var(--ink-soft)",
+                textDecoration: "none",
+                marginTop: "-1.25rem",
+              }}
+            >
+              or call (973) 640-2740
             </motion.a>
           </motion.div>
         )}
