@@ -1,6 +1,8 @@
 "use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import CallOrText from "./CallOrText";
+import { site } from "@/lib/site";
 
 export default function Visit() {
   const ref = useRef<HTMLElement>(null);
@@ -97,11 +99,14 @@ export default function Visit() {
                 <div>
                   <p style={{ fontFamily: "var(--font-body)", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "0.2rem" }}>Phone</p>
                   <a
-                    href="tel:+19736402740"
+                    href={site.phoneHref}
                     style={{ fontFamily: "var(--font-body)", fontSize: "0.95rem", color: "var(--crimson)", fontWeight: 500, textDecoration: "none" }}
                   >
-                    (973) 640-2740
+                    {site.phone}
                   </a>
+                  <div style={{ marginTop: "0.7rem" }}>
+                    <CallOrText phone={site.phone} variant="inline" />
+                  </div>
                 </div>
               </div>
 

@@ -1,5 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
+import CallOrText from "./CallOrText";
+import { site } from "@/lib/site";
 
 export default function CallBanner() {
   return (
@@ -70,21 +72,15 @@ export default function CallBanner() {
           >
             Book a Cut
           </a>
-          <p style={{ marginTop: "1.1rem" }}>
-            <a
-              href="tel:+19736402740"
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: "0.85rem",
-                color: "rgba(255,255,255,0.8)",
-                textDecoration: "none",
-                borderBottom: "1px solid rgba(255,255,255,0.4)",
-                paddingBottom: "2px",
-              }}
-            >
-              or call (973) 640-2740
-            </a>
-          </p>
+          <div
+            style={{
+              marginTop: "1.1rem",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <CallOrText phone={site.phone} tone="paper" align="right" />
+          </div>
         </motion.div>
       </div>
     </section>

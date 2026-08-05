@@ -1,4 +1,5 @@
 "use client";
+import { site } from "@/lib/site";
 
 export default function Footer() {
   const scrollTo = (hash: string) => {
@@ -41,10 +42,16 @@ export default function Footer() {
               522 William St, East Orange, NJ 07017
             </p>
             <a
-              href="tel:+19736402740"
+              href={site.phoneHref}
               style={{ display: "block", marginTop: "0.4rem", fontFamily: "var(--font-body)", fontSize: "0.85rem", color: "var(--crimson)", textDecoration: "none" }}
             >
-              (973) 640-2740
+              {site.phone}
+            </a>
+            <a
+              href={site.smsHref}
+              style={{ display: "inline-block", marginTop: "0.35rem", fontFamily: "var(--font-body)", fontSize: "0.78rem", color: "rgba(247,248,250,0.6)", textDecoration: "none", borderBottom: "1px solid rgba(247,248,250,0.25)", paddingBottom: "2px" }}
+            >
+              or text a photo of the cut
             </a>
           </div>
 

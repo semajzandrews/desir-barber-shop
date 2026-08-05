@@ -26,21 +26,17 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { formatAsYouType, isCompletePhone } from "@/lib/phone";
+import { site } from "@/lib/site";
 
 /**
- * US phone formatting + validation, shared behaviour across every build.
- * Formats to (xxx) xxx-xxxx while typing, hard-caps at 10 digits, and exposes
- * the completeness check the submit gate uses. Non-digits are dropped rather
- * than rejected, so a pasted "973-555-0123" or "+1 973 555 0123" still lands.
+ * Phone formatting + validation come from lib/phone, the one module that also
+ * builds every tel:/sms: href on this site. This file used to carry its own
+ * copy of the formatter; that is exactly the drift the shared module exists to
+ * prevent, so the copy is gone and the mask below is the shared one.
  */
-export function formatPhone(input: string): string {
-  const d = input.replace(/\D/g, "").replace(/^1(?=\d{10})/, "").slice(0, 10);
-  if (d.length === 0) return "";
-  if (d.length <= 3) return `(${d}`;
-  if (d.length <= 6) return `(${d.slice(0, 3)}) ${d.slice(3)}`;
-  return `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}`;
-}
-export const isPhoneComplete = (v: string) => v.replace(/\D/g, "").length === 10;
+export const formatPhone = formatAsYouType;
+export const isPhoneComplete = isCompletePhone;
 
 /* The shop's own menu, verbatim from the Services section. Nothing added. */
 const MENU: { num: string; title: string; tagline: string }[] = [
@@ -605,7 +601,7 @@ export default function Ticket() {
 
                 <div className="ruled" style={{ margin: "1.2rem 0 1rem" }} />
                 <a
-                  href="tel:+19736402740"
+                  href={site.phoneHref}
                   style={{
                     fontFamily: "var(--font-body)",
                     fontSize: "0.82rem",
@@ -618,7 +614,7 @@ export default function Ticket() {
                     paddingBottom: "2px",
                   }}
                 >
-                  (973) 640-2740 &nbsp;&rarr;
+                  {site.phone} &nbsp;&rarr;
                 </a>
                 <button
                   type="button"

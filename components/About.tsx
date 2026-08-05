@@ -1,6 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { site } from "@/lib/site";
 
 export default function About() {
   const ref = useRef<HTMLElement>(null);
@@ -132,7 +133,7 @@ export default function About() {
               {[
                 { label: "Address", value: "522 William St" },
                 { label: "City", value: "East Orange, NJ" },
-                { label: "Phone", value: "(973) 640-2740" },
+                { label: "Phone", value: site.phone },
               ].map((item) => (
                 <div key={item.label}>
                   <p style={{

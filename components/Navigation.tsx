@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import CallOrText from "./CallOrText";
+import { site } from "@/lib/site";
 
 const links = [
   { label: "Services", href: "#services" },
@@ -191,21 +193,14 @@ export default function Navigation() {
             >
               Book a Cut
             </motion.a>
-            <motion.a
-              href="tel:+19736402740"
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.38 }}
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: "0.85rem",
-                color: "var(--ink-soft)",
-                textDecoration: "none",
-                marginTop: "-1.25rem",
-              }}
+              style={{ marginTop: "-1rem", display: "flex", justifyContent: "center" }}
             >
-              or call (973) 640-2740
-            </motion.a>
+              <CallOrText phone={site.phone} variant="inline" />
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
